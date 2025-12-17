@@ -14,6 +14,7 @@ jobs:
           POSTGRES_USER: myuser
           POSTGRES_PASSWORD: mypassword
           POSTGRES_DB: myappdb
+          DATABASE_URL: postgresql://myuser:mypassword@localhost:5432/myappdb 
         ports:
           - 5432:5432
         options: >-
@@ -22,8 +23,8 @@ jobs:
           --health-timeout=5s
           --health-retries=5
 
-      env:
-        DATABASE_URL: postgresql://myuser:mypassword@localhost:5432/myappdb    
+     
+          
 
     steps:
       - name: Checkout code
